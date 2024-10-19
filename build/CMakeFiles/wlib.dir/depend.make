@@ -5,6 +5,8 @@ CMakeFiles/wlib.dir/src/bytearray.cpp.o: ../include/bytearray.h
 CMakeFiles/wlib.dir/src/bytearray.cpp.o: ../include/wlib.h
 CMakeFiles/wlib.dir/src/bytearray.cpp.o: ../src/bytearray.cpp
 
+CMakeFiles/wlib.dir/src/codec.cpp.o: ../include/codec.h
+CMakeFiles/wlib.dir/src/codec.cpp.o: ../include/wlib.h
 CMakeFiles/wlib.dir/src/codec.cpp.o: ../src/codec.cpp
 
 CMakeFiles/wlib.dir/src/datetime.cpp.o: ../include/datetime.h
@@ -21,6 +23,10 @@ CMakeFiles/wlib.dir/src/file.cpp.o: ../include/codec.h
 CMakeFiles/wlib.dir/src/file.cpp.o: ../include/file.h
 CMakeFiles/wlib.dir/src/file.cpp.o: ../include/wlib.h
 CMakeFiles/wlib.dir/src/file.cpp.o: ../src/file.cpp
+
+CMakeFiles/wlib.dir/src/http.cpp.o: ../include/http.h
+CMakeFiles/wlib.dir/src/http.cpp.o: ../include/wlib.h
+CMakeFiles/wlib.dir/src/http.cpp.o: ../src/http.cpp
 
 CMakeFiles/wlib.dir/src/logger.cpp.o: ../include/datetime.h
 CMakeFiles/wlib.dir/src/logger.cpp.o: ../include/logger.h

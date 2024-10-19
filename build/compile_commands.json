@@ -1,32 +1,37 @@
 [
 {
   "directory": "/workspaces/wlib/build",
-  "command": "/usr/bin/c++   -I/workspaces/wlib/include  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/bytearray.cpp.o -c /workspaces/wlib/src/bytearray.cpp",
+  "command": "/usr/bin/c++   -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/bytearray.cpp.o -c /workspaces/wlib/src/bytearray.cpp",
   "file": "/workspaces/wlib/src/bytearray.cpp"
 },
 {
   "directory": "/workspaces/wlib/build",
-  "command": "/usr/bin/c++   -I/workspaces/wlib/include  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/codec.cpp.o -c /workspaces/wlib/src/codec.cpp",
+  "command": "/usr/bin/c++   -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/codec.cpp.o -c /workspaces/wlib/src/codec.cpp",
   "file": "/workspaces/wlib/src/codec.cpp"
 },
 {
   "directory": "/workspaces/wlib/build",
-  "command": "/usr/bin/c++   -I/workspaces/wlib/include  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/datetime.cpp.o -c /workspaces/wlib/src/datetime.cpp",
+  "command": "/usr/bin/c++   -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/datetime.cpp.o -c /workspaces/wlib/src/datetime.cpp",
   "file": "/workspaces/wlib/src/datetime.cpp"
 },
 {
   "directory": "/workspaces/wlib/build",
-  "command": "/usr/bin/c++   -I/workspaces/wlib/include  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/dir.cpp.o -c /workspaces/wlib/src/dir.cpp",
+  "command": "/usr/bin/c++   -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/dir.cpp.o -c /workspaces/wlib/src/dir.cpp",
   "file": "/workspaces/wlib/src/dir.cpp"
 },
 {
   "directory": "/workspaces/wlib/build",
-  "command": "/usr/bin/c++   -I/workspaces/wlib/include  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/file.cpp.o -c /workspaces/wlib/src/file.cpp",
+  "command": "/usr/bin/c++   -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/file.cpp.o -c /workspaces/wlib/src/file.cpp",
   "file": "/workspaces/wlib/src/file.cpp"
 },
 {
   "directory": "/workspaces/wlib/build",
-  "command": "/usr/bin/c++   -I/workspaces/wlib/include  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/logger.cpp.o -c /workspaces/wlib/src/logger.cpp",
+  "command": "/usr/bin/c++   -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/http.cpp.o -c /workspaces/wlib/src/http.cpp",
+  "file": "/workspaces/wlib/src/http.cpp"
+},
+{
+  "directory": "/workspaces/wlib/build",
+  "command": "/usr/bin/c++   -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib  -g   -std=gnu++11 -o CMakeFiles/wlib.dir/src/logger.cpp.o -c /workspaces/wlib/src/logger.cpp",
   "file": "/workspaces/wlib/src/logger.cpp"
 }
 ]

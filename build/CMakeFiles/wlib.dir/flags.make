@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/wlib/include 
+CXX_INCLUDES = -I/workspaces/wlib/include -I/workspaces/wlib/thirdparty/cpp-httplib 
 

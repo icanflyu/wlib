@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/wlib.dir/src/datetime.cpp.o"
   "CMakeFiles/wlib.dir/src/dir.cpp.o"
   "CMakeFiles/wlib.dir/src/file.cpp.o"
+  "CMakeFiles/wlib.dir/src/http.cpp.o"
   "CMakeFiles/wlib.dir/src/logger.cpp.o"
 )
 

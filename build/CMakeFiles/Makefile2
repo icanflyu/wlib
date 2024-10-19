@@ -55,19 +55,40 @@ CMAKE_BINARY_DIR = /workspaces/wlib/build
 # The main recursive "all" target.
 all: CMakeFiles/wlib.dir/all
 all: thirdparty/openssl-cmake/all
+all: thirdparty/cpp-httplib/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: thirdparty/openssl-cmake/preinstall
+preinstall: thirdparty/cpp-httplib/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/wlib.dir/clean
 clean: thirdparty/openssl-cmake/clean
+clean: thirdparty/cpp-httplib/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory thirdparty/cpp-httplib
+
+# Recursive "all" directory target.
+thirdparty/cpp-httplib/all:
+
+.PHONY : thirdparty/cpp-httplib/all
+
+# Recursive "preinstall" directory target.
+thirdparty/cpp-httplib/preinstall:
+
+.PHONY : thirdparty/cpp-httplib/preinstall
+
+# Recursive "clean" directory target.
+thirdparty/cpp-httplib/clean:
+
+.PHONY : thirdparty/cpp-httplib/clean
 
 #=============================================================================
 # Directory level rules for directory thirdparty/openssl-cmake
@@ -94,12 +115,12 @@ thirdparty/openssl-cmake/clean: thirdparty/openssl-cmake/CMakeFiles/openssl.dir/
 CMakeFiles/wlib.dir/all:
 	$(MAKE) -f CMakeFiles/wlib.dir/build.make CMakeFiles/wlib.dir/depend
 	$(MAKE) -f CMakeFiles/wlib.dir/build.make CMakeFiles/wlib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/wlib/build/CMakeFiles --progress-num=10,11,12,13,14,15,16 "Built target wlib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/wlib/build/CMakeFiles --progress-num=10,11,12,13,14,15,16,17 "Built target wlib"
 .PHONY : CMakeFiles/wlib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/wlib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/wlib/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/wlib/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/wlib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/wlib/build/CMakeFiles 0
 .PHONY : CMakeFiles/wlib.dir/rule

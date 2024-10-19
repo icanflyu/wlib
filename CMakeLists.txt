@@ -11,6 +11,7 @@ PROJECT(wlib)
 ADD_COMPILE_OPTIONS("$<$<CXX_COMPILER_ID:MSVC>:/source-charset:utf-8>") 
 ################################ 引用目录 ##################################
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/thirdparty/cpp-httplib/)
 ################################ 源码文件 ##################################
 # 搜索源文件
 FILE(GLOB SRC_LIST ${PROJECT_SOURCE_DIR}/src/*.cpp)
@@ -38,3 +39,4 @@ SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES
 )
 
 ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/thirdparty/openssl-cmake)
+ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/thirdparty/cpp-httplib)

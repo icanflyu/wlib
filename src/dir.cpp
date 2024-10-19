@@ -13,14 +13,12 @@
 #include <pathcch.h>
 #include "codec.h"
 #pragma comment(lib, "pathcch.lib")
-#define GetCurrentDir _getcwd
 #else
 #include <unistd.h>
 #include <dirent.h>
 #include <libgen.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#define GetCurrentDir getcwd
 #endif
 
 #ifdef _WIN32
@@ -53,105 +51,98 @@ namespace wlib
 				list.push_back(driveBuffer);
 			}
 		}
-        		return list;
+		return list;
 #else
-	std::vector<std::string> list;
-	return list;
+		std::vector<std::string> list;
+		return list;
 #endif
-
 	}
 
-std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool full)
-{
+	std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool full)
+	{
 #ifdef _WIN32
-    std::vector<std::string> subDirs;
-    WIN32_FIND_DATAA findData;
-    HANDLE hFind = FindFirstFileA((path + (path.back() == '\\'? "*" : "\\*")).c_str(), &findData);
-    if (hFind!= INVALID_HANDLE_VALUE)
-    {
-        do
-        {
-            if ((findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)!= 0)
-            {
-                if (std::string(findData.cFileName)!= "." && std::string(findData.cFileName)!= "..")
-                {
-                    if (full)
-                    {
-                        subDirs.push_back(path + "\\" + findData.cFileName);
-                    }
-                    else
-                    {
-                        subDirs.push_back(findData.cFileName);
-                    }
-                    if (recursion)
-                    {
-                        std::string newPath = path + "\\" + findData.cFileName;
-                        auto childSubDirs = sub(newPath, recursion, full);
-                        subDirs.insert(subDirs.end(), childSubDirs.begin(), childSubDirs.end());
-                    }
-                }
-            }
-        } while (FindNextFileA(hFind, &findData));
+		std::vector<std::string> subDirs;
+		WIN32_FIND_DATAA findData;
+		HANDLE hFind = FindFirstFileA((path + (path.back() == '\\' ? "*" : "\\*")).c_str(), &findData);
+		if (hFind != INVALID_HANDLE_VALUE)
+		{
+			do
+			{
+				if ((findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != 0)
+				{
+					if (std::string(findData.cFileName) != "." && std::string(findData.cFileName) != "..")
+					{
+						if (full)
+						{
+							subDirs.push_back(path + "\\" + findData.cFileName);
+						}
+						else
+						{
+							subDirs.push_back(findData.cFileName);
+						}
+						if (recursion)
+						{
+							std::string newPath = path + "\\" + findData.cFileName;
+							auto childSubDirs = sub(newPath, recursion, full);
+							subDirs.insert(subDirs.end(), childSubDirs.begin(), childSubDirs.end());
+						}
+					}
+				}
+			} while (FindNextFileA(hFind, &findData));
 
-        FindClose(hFind);
-    }
-    return subDirs;
+			FindClose(hFind);
+		}
+		return subDirs;
 #else
-    std::vector<std::string> subDirs;
-    DIR *dir;
-    struct dirent *ent;
+		std::vector<std::string> subDirs;
+		DIR *dir;
+		struct dirent *ent;
 
-    if ((dir = opendir(path.c_str()))!= NULL)
-    {
-        while ((ent = readdir(dir))!= NULL)
-        {
-            if (ent->d_type == DT_DIR)
-            {
-                if (std::string(ent->d_name)!= "." && std::string(ent->d_name)!= "..")
-                {
-                    if (full)
-                    {
-                        subDirs.push_back(path + "/" + ent->d_name);
-                    }
-                    else
-                    {
-                        subDirs.push_back(ent->d_name);
-                    }
-                    if (recursion)
-                    {
-                        std::string newPath = path + "/" + ent->d_name;
-                        auto childSubDirs = sub(newPath, recursion, full);
-                        subDirs.insert(subDirs.end(), childSubDirs.begin(), childSubDirs.end());
-                    }
-                }
-            }
-        }
-        closedir(dir);
-    }
+		if ((dir = opendir(path.c_str())) != NULL)
+		{
+			while ((ent = readdir(dir)) != NULL)
+			{
+				if (ent->d_type == DT_DIR)
+				{
+					if (std::string(ent->d_name) != "." && std::string(ent->d_name) != "..")
+					{
+						if (full)
+						{
+							subDirs.push_back(path + "/" + ent->d_name);
+						}
+						else
+						{
+							subDirs.push_back(ent->d_name);
+						}
+						if (recursion)
+						{
+							std::string newPath = path + "/" + ent->d_name;
+							auto childSubDirs = sub(newPath, recursion, full);
+							subDirs.insert(subDirs.end(), childSubDirs.begin(), childSubDirs.end());
+						}
+					}
+				}
+			}
+			closedir(dir);
+		}
 
-    return subDirs;
+		return subDirs;
 #endif
-}
+	}
 
 	std::string dir::current()
 	{
+
+		char buffer[FILENAME_MAX];
 #ifdef _WIN32
-		char buffer[FILENAME_MAX];
-		if (GetCurrentDir(buffer, sizeof(buffer)))
-		{
-			return std::string(buffer);
-		}
-		return std::string();
-#elif __linux__
-		char buffer[FILENAME_MAX];
-		if (getcwd(buffer, sizeof(buffer)) != NULL)
-		{
-			return std::string(buffer);
-		}
-		return std::string();
+		if (_getcwd(buffer, sizeof(buffer)))
 #else
-		return std::string();
+		if (getcwd(buffer, sizeof(buffer)))
 #endif
+		{
+			return std::string(buffer);
+		}
+		return std::string();
 	}
 
 	std::string dir::parent(const std::string &path)
@@ -159,7 +150,7 @@ std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool 
 		std::string result;
 
 #ifdef _WIN32
-		std::wstring path_wide = dog::codec::ansi_to_unicode(path);
+		std::wstring path_wide = codec::ansi_to_unicode(path);
 		if (path_wide.empty())
 		{
 			return std::string();
@@ -183,7 +174,7 @@ std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool 
 			parentPath[len - 1] = L'\0';
 		}
 
-		result = dog::codec::unicode_to_ansi(parentPath);
+		result = codec::unicode_to_ansi(parentPath);
 #else
 		// Use dirname on Linux
 		char *temp = strdup(path.c_str());
@@ -214,7 +205,7 @@ std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool 
 	bool dir::create(const std::string &filepath, bool recursion)
 	{
 #ifdef _WIN32
-		std::wstring path_wide = dog::codec::ansi_to_unicode(filepath);
+		std::wstring path_wide = codec::ansi_to_unicode(filepath);
 		if (path_wide.empty())
 		{
 			return false;
@@ -322,9 +313,9 @@ std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool 
 		if (GetLongPathNameW(tempPath, longPath, MAX_PATH) == 0)
 		{
 			// 如果转换失败，返回原始的短文件名路径
-			return dog::codec::unicode_to_ansi(tempPath);
+			return codec::unicode_to_ansi(tempPath);
 		}
-		std::string result = dog::codec::unicode_to_ansi(longPath);
+		std::string result = codec::unicode_to_ansi(longPath);
 #elif __linux__
 		const char *tempDir = getenv("TMPDIR");
 		if (tempDir == NULL)
@@ -343,7 +334,7 @@ std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool 
 
 	bool dir::remove(const std::string &path)
 	{
-        #ifdef _WIN32
+#ifdef _WIN32
 		std::string searchPath = path;
 		// 确保searchPath以斜杠结尾，除非它已经是根目录
 		if (!searchPath.empty() && searchPath.back() != '\\')
@@ -402,9 +393,9 @@ std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool 
 
 		// 尝试删除目录本身，此时它应该为空
 		return RemoveDirectoryA(path.c_str()) != 0;
-        #else
-        return false;
-        #endif
+#else
+		return false;
+#endif
 	}
 
 	std::string dir::desktop()
@@ -416,7 +407,7 @@ std::vector<std::string> dir::sub(const std::string &path, bool recursion, bool 
 			return std::string();
 		}
 
-		return dog::codec::unicode_to_ansi(path);
+		return codec::unicode_to_ansi(path);
 #elif __linux__
 		char *desktopPath = getenv("HOME");
 		if (desktopPath == NULL)

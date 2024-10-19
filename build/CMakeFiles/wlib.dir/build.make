@@ -122,9 +122,22 @@ CMakeFiles/wlib.dir/src/file.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wlib.dir/src/file.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/wlib/src/file.cpp -o CMakeFiles/wlib.dir/src/file.cpp.s
 
+CMakeFiles/wlib.dir/src/http.cpp.o: CMakeFiles/wlib.dir/flags.make
+CMakeFiles/wlib.dir/src/http.cpp.o: ../src/http.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/wlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wlib.dir/src/http.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wlib.dir/src/http.cpp.o -c /workspaces/wlib/src/http.cpp
+
+CMakeFiles/wlib.dir/src/http.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wlib.dir/src/http.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/wlib/src/http.cpp > CMakeFiles/wlib.dir/src/http.cpp.i
+
+CMakeFiles/wlib.dir/src/http.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wlib.dir/src/http.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/wlib/src/http.cpp -o CMakeFiles/wlib.dir/src/http.cpp.s
+
 CMakeFiles/wlib.dir/src/logger.cpp.o: CMakeFiles/wlib.dir/flags.make
 CMakeFiles/wlib.dir/src/logger.cpp.o: ../src/logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/wlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wlib.dir/src/logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/wlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wlib.dir/src/logger.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wlib.dir/src/logger.cpp.o -c /workspaces/wlib/src/logger.cpp
 
 CMakeFiles/wlib.dir/src/logger.cpp.i: cmake_force
@@ -142,6 +155,7 @@ wlib_OBJECTS = \
 "CMakeFiles/wlib.dir/src/datetime.cpp.o" \
 "CMakeFiles/wlib.dir/src/dir.cpp.o" \
 "CMakeFiles/wlib.dir/src/file.cpp.o" \
+"CMakeFiles/wlib.dir/src/http.cpp.o" \
 "CMakeFiles/wlib.dir/src/logger.cpp.o"
 
 # External object files for target wlib
@@ -152,10 +166,11 @@ wlib_EXTERNAL_OBJECTS =
 ../lib/debug/libwlibd.a: CMakeFiles/wlib.dir/src/datetime.cpp.o
 ../lib/debug/libwlibd.a: CMakeFiles/wlib.dir/src/dir.cpp.o
 ../lib/debug/libwlibd.a: CMakeFiles/wlib.dir/src/file.cpp.o
+../lib/debug/libwlibd.a: CMakeFiles/wlib.dir/src/http.cpp.o
 ../lib/debug/libwlibd.a: CMakeFiles/wlib.dir/src/logger.cpp.o
 ../lib/debug/libwlibd.a: CMakeFiles/wlib.dir/build.make
 ../lib/debug/libwlibd.a: CMakeFiles/wlib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/wlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library ../lib/debug/libwlibd.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/wlib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library ../lib/debug/libwlibd.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/wlib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wlib.dir/link.txt --verbose=$(VERBOSE)
 

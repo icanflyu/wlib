@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../lib/debug/libwlibd.a  CMakeFiles/wlib.dir/src/bytearray.cpp.o CMakeFiles/wlib.dir/src/codec.cpp.o CMakeFiles/wlib.dir/src/datetime.cpp.o CMakeFiles/wlib.dir/src/dir.cpp.o CMakeFiles/wlib.dir/src/file.cpp.o CMakeFiles/wlib.dir/src/logger.cpp.o
+/usr/bin/ar qc ../lib/debug/libwlibd.a  CMakeFiles/wlib.dir/src/bytearray.cpp.o CMakeFiles/wlib.dir/src/codec.cpp.o CMakeFiles/wlib.dir/src/datetime.cpp.o CMakeFiles/wlib.dir/src/dir.cpp.o CMakeFiles/wlib.dir/src/file.cpp.o CMakeFiles/wlib.dir/src/http.cpp.o CMakeFiles/wlib.dir/src/logger.cpp.o
 /usr/bin/ranlib ../lib/debug/libwlibd.a
