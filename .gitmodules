@@ -1,3 +1,6 @@
 [submodule "thirdparty/openssl-cmake"]
 	path = thirdparty/openssl-cmake
 	url = https://github.com/viaduck/openssl-cmake
+[submodule "thirdparty/cpp-httplib"]
+	path = thirdparty/cpp-httplib
+	url = https://github.com/yhirose/cpp-httplib
