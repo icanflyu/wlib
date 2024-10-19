@@ -1,13 +1,5 @@
 #include "bytearray.h"
-
-#include <vector>
-#include <string>
-
-#include <assert.h>
-#include <iostream>
-#include "Memory.h"
-#include "String.h"
-namespace dog
+namespace wlib
 {
 	/// <summary>
 	/// 默认构造函数
@@ -217,7 +209,6 @@ namespace dog
 
 	char bytearray::operator[](const size_t i) const
 	{
-		assert(i < m_size && m_buffer);
 		return reinterpret_cast<char *>(m_buffer)[i];
 	}
 
@@ -317,13 +308,13 @@ namespace dog
 		return *this;
 	}
 
-	bytearray &bytearray::append(const __int32 data)
+	bytearray &bytearray::append(const int32_t data)
 	{
 		this->append((char *)&data, sizeof(data));
 		return *this;
 	}
 
-	bytearray &bytearray::append(const __int64 data)
+	bytearray &bytearray::append(const int64_t data)
 	{
 		this->append((char *)&data, sizeof(data));
 		return *this;
@@ -341,13 +332,13 @@ namespace dog
 		return *this;
 	}
 
-	bytearray &bytearray::append(const unsigned __int32 data)
+	bytearray &bytearray::append(const uint32_t data)
 	{
 		this->append((char *)&data, sizeof(data));
 		return *this;
 	}
 
-	bytearray &bytearray::append(const unsigned __int64 data)
+	bytearray &bytearray::append(const uint64_t data)
 	{
 		this->append((char *)&data, sizeof(data));
 		return *this;
@@ -417,13 +408,13 @@ namespace dog
 		return *this;
 	}
 
-	bytearray &bytearray::prepend(const __int32 data)
+	bytearray &bytearray::prepend(const int32_t data)
 	{
 		this->prepend((char *)&data, sizeof(data));
 		return *this;
 	}
 
-	bytearray &bytearray::prepend(const __int64 data)
+	bytearray &bytearray::prepend(const int64_t data)
 	{
 		this->prepend((char *)&data, sizeof(data));
 		return *this;
@@ -441,13 +432,13 @@ namespace dog
 		return *this;
 	}
 
-	bytearray &bytearray::prepend(const unsigned __int32 data)
+	bytearray &bytearray::prepend(const uint32_t data)
 	{
 		this->prepend((char *)&data, sizeof(data));
 		return *this;
 	}
 
-	bytearray &bytearray::prepend(const unsigned __int64 data)
+	bytearray &bytearray::prepend(const uint64_t data)
 	{
 		this->prepend((char *)&data, sizeof(data));
 		return *this;

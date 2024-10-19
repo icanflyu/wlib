@@ -1,11 +1,15 @@
-#pragma once
+#ifndef _BYTEARRAY_HEAD_
+#define _BYTEARRAY_HEAD_
 #include <vector>
-#include <string>
+#include <string.h>
 #include <sstream>
+#include <stdio.h>
+#include <assert.h>
+#include <iostream>
 #include "wlib.h"
 
 
-namespace dog
+namespace wlib
 {
     class bytearray
     {
@@ -70,12 +74,12 @@ namespace dog
         bytearray &append(const char data);
         bytearray &append(const wchar_t data);
         bytearray &append(const short data);
-        bytearray &append(const __int32 data);
-        bytearray &append(const __int64 data);
+        bytearray &append(const int32_t data);
+        bytearray &append(const int64_t data);
         bytearray &append(const unsigned char data);
         bytearray &append(const unsigned short data);
-        bytearray &append(const unsigned __int32 data);
-        bytearray &append(const unsigned __int64 data);
+        bytearray &append(const uint32_t data);
+        bytearray &append(const uint64_t data);
 
         bytearray &prepend(const bytearray &value);
         bytearray &prepend(const char *data, size_t size);
@@ -85,12 +89,12 @@ namespace dog
         bytearray &prepend(const char data);
         bytearray &prepend(const wchar_t data);
         bytearray &prepend(const short data);
-        bytearray &prepend(const __int32 data);
-        bytearray &prepend(const __int64 data);
+        bytearray &prepend(const int32_t data);
+        bytearray &prepend(const int64_t data);
         bytearray &prepend(const unsigned char data);
         bytearray &prepend(const unsigned short data);
-        bytearray &prepend(const unsigned __int32 data);
-        bytearray &prepend(const unsigned __int64 data);
+        bytearray &prepend(const uint32_t data);
+        bytearray &prepend(const uint64_t data);
 
         bytearray left(const size_t &index, bool include = false) const;
         bytearray left(const bytearray &data, bool include = false) const;
@@ -107,10 +111,10 @@ namespace dog
         bytearray repalce(const bytearray &src, const bytearray &dest, const bool &once = false) const;
         std::vector<bytearray> split(const bytearray &separator) const;
 
-        std::string toHex(char separator = NULL) const;
+        std::string toHex(char separator = 0) const;
 
     public:
-        static bytearray fromHex(std::string hex, char separator = NULL);
+        static bytearray fromHex(std::string hex, char separator = 0);
 
     public:
         void resize(size_t size);
@@ -126,3 +130,4 @@ namespace dog
     };
 
 }
+#endif

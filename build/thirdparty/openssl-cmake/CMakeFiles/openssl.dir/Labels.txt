@@ -1,0 +1,14 @@
+# Target labels
+ openssl
+# Source files and their labels
+/workspaces/wlib/build/thirdparty/openssl-cmake/CMakeFiles/openssl
+/workspaces/wlib/build/thirdparty/openssl-cmake/CMakeFiles/openssl.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/CMakeFiles/openssl-complete.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-install.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-mkdir.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-download.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-update.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-patch.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-configure.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-build.rule
+/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-test.rule

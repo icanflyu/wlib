@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/CMakeFiles/openssl"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/CMakeFiles/openssl.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/CMakeFiles/openssl-complete.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-install.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-mkdir.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-download.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-update.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-patch.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-configure.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-build.rule"
+		},
+		{
+			"file" : "/workspaces/wlib/build/thirdparty/openssl-cmake/openssl-prefix/src/openssl-stamp/openssl-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"openssl"
+		],
+		"name" : "openssl"
+	}
+}

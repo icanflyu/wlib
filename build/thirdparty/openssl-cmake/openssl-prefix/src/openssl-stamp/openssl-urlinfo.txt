@@ -1,0 +1,3 @@
+repository='external project URL'
+module='https://builds.viaduck.org/prebuilts/openssl/3.3.2/x86_64-linux.tar.gz'
+tag=''
